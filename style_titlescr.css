@@ -1,0 +1,122 @@
+body {
+    background-color: #0D0221;
+}
+
+.menu {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    flex-direction: column;
+    background-color: #0D0221;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(rgba(0, 255, 144, 0.1), 0.1em,transparent 0.1em);
+    background-size: 100% 0.2em;
+    pointer-events: none;
+}
+
+#divToupeira {
+    position: absolute;
+    z-index: 0;
+    bottom: 82vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+#divToupeira img {
+    height: 150px;
+    width: auto;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 60%);
+}
+
+#divTitle {
+    display: flex;
+    height: 42vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+#titulo {
+    font-family: 'Press Start 2P';
+    font-size: 32px;
+    color: #FF2E9A;
+    text-shadow: 2px 1px #5E0FB3, 0 0 8px #C4157A;
+    /* background-color: #0D0221; */
+    padding: 0 10px;
+    position: relative;
+    z-index: 2;
+}
+
+#subtitulo {
+    font-family: 'VT323';
+    font-size: 28px;
+    color: #7BFBFF;
+    margin-top: 15px;
+    text-shadow: 0 0 6px #0BADBF;
+}
+
+.line {
+    width: 70%;
+    height: 2px;
+    margin: 8px 0;
+    background: linear-gradient(to right, transparent, #C4157A, transparent);
+    box-shadow: 0 0 6px #C4157A;
+}
+
+#divBotoes {
+    display: flex;
+    height: 48vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+button {
+    width: 300px;
+    height: 55px;
+    margin: 7px;
+    background-color: #1A0B3D;
+    border: 2px solid #B968F2;
+    border-radius: 0;
+    color: #F5F0FF;
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+}
+
+button:hover {
+    background-color: #24123F;
+    border: 2px solid #FF2E9A;
+    box-shadow: 0 0 8px #FF2E9A;
+    color: #FF6EC7;
+}
+
+#rodape {
+    position: absolute;
+    bottom: 15px;
+    z-index: 1;
+}
+
+#rodape p {
+    font-family: 'VT323';
+    font-size: 16px;
+    color: #5E0FB3;
+}

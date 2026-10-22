@@ -1,0 +1,22 @@
+Fundo (preto profundo): #0D0221
+Fundo secundário (roxo escuro): #1A0B3D
+Fundo elevado (contêiner): #24123F
+
+Rosa neon claro: #FF6EC7
+Rosa neon base: #FF2E9A
+Rosa neon escuro: #C4157A
+
+Ciano neon claro: #7BFBFF
+Ciano neon base: #08F7FE
+Ciano neon escuro: #0BADBF
+
+Roxo neon claro: #B968F2
+Roxo neon base: #8C1EFF
+Roxo neon escuro: #5E0FB3
+
+Amarelo neon (destaque): #FCEE09
+Amarelo neon escuro: #C4BB00
+
+Texto (branco/quase branco): #F5F0FF
+Erro (vermelho neon): #FF2A6D
+Erro escuro: #B3003D

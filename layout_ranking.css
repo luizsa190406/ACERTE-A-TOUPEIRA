@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+}
+
+.conteiner{
+    position: relative;
+    display: grid;
+    grid-template:
+    "menu"
+    "header"
+    "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    min-height: 100vh;
+}
+
+.conteiner::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(rgba(0, 255, 144, 0.1) 50%, transparent 50%);
+    background-size: 100% 0.2em;
+    pointer-events: none;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    grid-area: header;
+    background-color: #0D0221;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    grid-area: main;
+    background-color: #0D0221;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+button{
+    font-family: 'VT323';
+    font-size: 30px;
+    color: #F5F0FF;
+    background-color: transparent;
+    padding: 2px;
+    border: 1px solid #F5F0FF;
+}
+
+button:hover{
+    text-shadow: 0 0 6px #0BADBF;
+}
+
+.divTable{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75vh;
+    background-color: #24123F;
+    border: 2px solid #0BADBF;
+    box-shadow: 0 0 20px #0BADBF;
+}
+
+.rankTable{
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rankTable td{
+    font-family: 'VT323';
+    color: #F5F0FF;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #F5F0FF;
+}
+
+.rankTable th {
+    font-family: 'VT323';
+    color: #F5F0FF;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #F5F0FF;
+}
+
+.menu{
+    grid-area: menu;
+    background-color : #0D0221;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    justify-content: left;
+    align-items: center;
+}
+
+.line{
+    width: 300px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #0BADBF, #0BADBF, transparent);
+}
+
+.lineBottom{
+    width: 100%;
+    height: 2px;
+    background-color: #B968F2;
+    box-shadow: 0 0 8px #B968F2;
+}

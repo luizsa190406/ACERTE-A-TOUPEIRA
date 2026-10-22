@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="layout_selecao.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="imagens/topeira_capacete.png">
+	<title>Seleção de modo</title>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="menu">
+            <a href="main_menu.html" class="a">ACERTE A TOUPEIRA</a>
+            <div class="lineBottom"></div>
+        </div>
+       <main>
+           <div class="divText"><p class="p2">Selecione o modo</p></div>
+           <div class="divModo">
+               <button type="button" class="divSelecao" data-grupo="modo" data-valor="normal" aria-pressed="false"><span class="p1">NORMAL</span></button>
+               <button type="button" class="divSelecao" data-grupo="modo" data-valor="explosivo" aria-pressed="false"><span class="p1">EXPLOSIVO</span></button>
+           </div>
+           <div class="divText"><p class="p2">Selecione a dificuldade</p></div>
+           <div class="divModo">
+               <button type="button" class="divSelecao" data-grupo="dificuldade" data-valor="facil" aria-pressed="false"><span class="p1">FÁCIL</span></button>
+               <button type="button" class="divSelecao" data-grupo="dificuldade" data-valor="medio" aria-pressed="false"><span class="p1">MÉDIO</span></button>
+               <button type="button" class="divSelecao" data-grupo="dificuldade" data-valor="dificil" aria-pressed="false"><span class="p1">DIFÍCIL</span></button>
+           </div>
+           <a href="jogo.html" class="button" id="btnJogar">Jogar</a>
+       </main>
+    </div>
+
+    <script src="selecao.js"></script>
+</body>
+</html>

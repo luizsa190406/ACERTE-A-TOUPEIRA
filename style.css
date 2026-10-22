@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+h1{
+    font-family: 'Press Start 2P';
+    font-size: 25px;
+    color: #F5F0FF;
+}
+
+h2{
+    font-family: 'Press Start 2P';
+    font-size: 20px;
+    color: #F5F0FF;
+}
+
+h3{
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+    color: #F5F0FF;
+}
+
+p{
+    font-family: 'VT323';
+    font-size: 20px;
+    color: #F5F0FF;
+}
+
+a{
+    font-family: 'VT323';
+    font-size: 20px;
+    color: #F5F0FF;
+    text-decoration: none;
+}
+
+li{
+    font-family: 'VT323';
+    font-size: 20px;
+    color: #F5F0FF;
+    text-decoration: none;
+}
+
+.a{
+    font-family: 'Press Start 2P';
+    font-size: 25px;
+    color: #F5F0FF;
+}
+
+.a:hover{
+    font-family: 'Press Start 2P';
+    font-size: 25px;
+    text-shadow: 0 0 6px #5E0FB3;
+}
+
+.h1:hover{ /* Vou manter este aqui, caso ele venha a ser necessário, mas não estamos utilizando ele agora*/
+    font-family: 'Press Start 2P';
+    font-size: 25px;
+    text-shadow: 0 0 6px #5E0FB3;
+}
+
+.p1{
+    font-family: 'VT323';
+    font-size: 55px;
+    color: #F5F0FF;
+}
+
+.p2{
+    font-family: 'Press Start 2P';
+    font-size: 28px;
+    color: #F5F0FF;
+}
+
+.p1:hover{
+    font-family: 'VT323';
+    font-size: 55px;
+    text-shadow: 0 0 6px #C4157A;
+}
