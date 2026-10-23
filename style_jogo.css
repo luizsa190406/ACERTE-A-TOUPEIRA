@@ -7,26 +7,29 @@
     font-family: 'Press Start 2P', system-ui;
 }
 
-body {
+html, body {
     background-color: #0D0221;
     color: #F5F0FF;
+    width: 100%;
+    max-width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
     user-select: none;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Força tudo no body a ficar no centro */
-    width: 100%;
+    align-items: center;
 }
 
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
 .header {
     background-color: rgba(13, 2, 33, 0.9);
-    min-height: 10vh;
-    width: 100%; /* Garante que o cabeçalho preenche a tela toda */
+    width: 100%;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    padding: 15px 30px;
+    padding: 12px 20px;
     border-bottom: 4px solid #B968F2;
     box-shadow: 0 0 20px #B968F2;
 }
@@ -34,16 +37,22 @@ body {
 .nav-controles {
     display: flex;
     align-items: center;
-    gap: 25px; 
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
 }
 
 .pause {
     background-image: url("imagens/pausebtn.png");
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: #1A0B3D;
-    border: 4px solid #B968F2;
-    height: 60px; 
-    width: 60px;
+    border: 3px solid #B968F2;
+    height: 52px;
+    width: 52px;
+    flex-shrink: 0;
     cursor: pointer;
     transition: 0.2s;
     border-radius: 8px;
@@ -51,18 +60,19 @@ body {
 
 .pause:hover {
     box-shadow: 0 0 15px #B968F2;
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .btn-topo {
-    font-size: 14px; 
+    font-size: 13px;
     color: #F5F0FF;
     background-color: #1A0B3D;
     border: 3px solid #C4157A;
-    padding: 15px 20px;
+    padding: 12px 16px;
     text-decoration: none;
     transition: 0.2s;
     text-shadow: 0 0 5px #F5F0FF;
+    white-space: nowrap;
 }
 
 .btn-topo:hover {
@@ -72,17 +82,17 @@ body {
 }
 
 /* =========================================================
-   LAYOUT ARCADE CENTRADO
+   LAYOUT ARCADE
    ========================================================= */
 .layout-arcade {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
+    align-items: center;
+    gap: 25px;
     width: 100%;
-    max-width: 1400px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1300px;
+    margin: 25px auto;
+    padding: 0 15px;
     flex-grow: 1;
 }
 
@@ -91,28 +101,28 @@ body {
     border: 4px solid #B968F2;
     border-radius: 12px;
     box-shadow: 0 0 20px #B968F2, inset 0 0 15px rgba(185, 104, 242, 0.3);
-    padding: 30px 20px;
+    padding: 25px 15px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    width: 250px;
+    gap: 30px;
+    width: 220px;
     text-align: center;
 }
 
 .hud-caixa {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 .hud-titulo {
-    font-size: 16px;
+    font-size: 14px;
     color: #C4157A;
     text-shadow: 0 0 8px #C4157A;
 }
 
 .hud-valor {
-    font-size: 28px;
+    font-size: 24px;
     color: #F5F0FF;
     text-shadow: 0 0 10px #F5F0FF;
 }
@@ -122,20 +132,21 @@ body {
 
 .jogo-container {
     background-color: rgba(0, 0, 0, 0.6);
-    border: 6px solid #C4157A;
+    border: 5px solid #C4157A;
     border-radius: 16px;
-    box-shadow: 0 0 30px #C4157A, inset 0 0 30px rgba(196, 21, 122, 0.4);
-    padding: 30px;
-    min-width: 600px;
+    box-shadow: 0 0 25px #C4157A, inset 0 0 25px rgba(196, 21, 122, 0.4);
+    padding: 20px;
     display: flex;
-    justify-content: center; /* Força o centro horizontal do tabuleiro */
-    align-items: center;     /* Força o centro vertical do tabuleiro */
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
 }
 
 .jogo {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Garante que as linhas ficam perfeitamente centralizadas */
+    align-items: center;
+    justify-content: center;
     width: 100%;
     gap: 10px;
 }
@@ -143,25 +154,28 @@ body {
 .row {
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 12px;
 }
 
 .row2 {
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
 .hole {
     background-color: transparent;
-    height: var(--tam-buraco, 150px);
-    width: var(--tam-buraco, 150px);
+    height: var(--tam-buraco, 130px);
+    width: var(--tam-buraco, 130px);
+    flex-shrink: 0;
     border: none;
     cursor: crosshair;
     position: relative;
     transition: transform 0.05s;
-    touch-action: manipulation; 
-    -webkit-tap-highlight-color: transparent; 
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
+
 .hole:active { transform: scale(0.9); }
 
 .holeimg {
@@ -171,17 +185,17 @@ body {
     transition: filter 0.1s;
 }
 
-.armadilha-ativa .holeimg { filter: drop-shadow(0 0 20px #FF0033); }
-.hit-acerto .holeimg { filter: drop-shadow(0 0 20px #39FF14) brightness(1.3); }
-.hit-capacete .holeimg { filter: drop-shadow(0 0 20px #FFD233) contrast(1.5); }
-.hit-erro .holeimg { filter: drop-shadow(0 0 20px #FF0000); }
+.armadilha-ativa .holeimg { filter: drop-shadow(0 0 18px #FF0033); }
+.hit-acerto .holeimg { filter: drop-shadow(0 0 18px #39FF14) brightness(1.3); }
+.hit-capacete .holeimg { filter: drop-shadow(0 0 18px #FFD233) contrast(1.5); }
+.hit-erro .holeimg { filter: drop-shadow(0 0 18px #FF0000); }
 
 .feedback-flutuante {
     position: absolute;
     top: 0%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 16px; 
+    font-size: 12px;
     pointer-events: none;
     white-space: nowrap;
     z-index: 50;
@@ -194,15 +208,15 @@ body {
 
 @keyframes subirFeedback {
     0%   { opacity: 1; transform: translate(-50%, 0); }
-    100% { opacity: 0; transform: translate(-50%, -60px); }
+    100% { opacity: 0; transform: translate(-50%, -45px); }
 }
 
 .tremor-explosao { animation: tremerTela 0.3s linear; }
 
 @keyframes tremerTela {
     0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(-10px, 8px); }
-    75% { transform: translate(10px, -8px); }
+    25% { transform: translate(-8px, 6px); }
+    75% { transform: translate(8px, -6px); }
 }
 
 /* =========================================================
@@ -211,10 +225,11 @@ body {
 .modal-jogo {
     position: fixed;
     inset: 0;
-    background-color: rgba(13, 2, 33, 0.95); 
+    background-color: rgba(13, 2, 33, 0.95);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px;
     z-index: 2000;
 }
 
@@ -224,5 +239,170 @@ body {
 
 .modal-card {
     background-color: #0D0221;
-    border: 5px solid #B968F2;
-    box-shadow: 0 0 40px #B968F2, inset 0 0 20px rgba(185, 104, 242, 0.
+    border: 4px solid #B968F2;
+    box-shadow: 0 0 30px #B968F2, inset 0 0 20px rgba(185, 104, 242, 0.3);
+    padding: 30px 20px;
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+}
+
+.modal-card h1 {
+    color: #B968F2;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px #B968F2;
+}
+
+.modal-card p {
+    color: #FFD233;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #FFD233;
+}
+
+.modal-estatisticas {
+    background-color: #1A0B3D;
+    border: 3px solid #C4157A;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #F5F0FF;
+    line-height: 1.9;
+}
+
+.modal-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-acao {
+    background-color: #1A0B3D;
+    color: #F5F0FF;
+    border: 3px solid #C4157A;
+    padding: 14px;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-acao.primario {
+    background-color: #C4157A;
+    border-color: #FFF;
+}
+
+.btn-acao:hover {
+    background-color: #B968F2;
+    border-color: #FFF;
+    box-shadow: 0 0 20px #B968F2;
+}
+
+/* =========================================================
+   RESPONSIVIDADE (Tablets e Celulares)
+   ========================================================= */
+@media (max-width: 1024px) {
+    .layout-arcade {
+        flex-direction: column;
+        gap: 12px;
+        margin: 10px auto;
+    }
+    .hud-lateral {
+        width: 100%;
+        max-width: 600px;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 12px;
+        gap: 10px;
+    }
+    .jogo-container {
+        width: 100%;
+        max-width: 600px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 8px 10px;
+    }
+    .nav-controles {
+        gap: 8px;
+    }
+    .pause {
+        height: 38px;
+        width: 38px;
+        border-width: 2px;
+    }
+    .btn-topo {
+        font-size: 10px;
+        padding: 9px 10px;
+        border-width: 2px;
+    }
+    .layout-arcade {
+        padding: 0 8px;
+        margin: 6px auto;
+        gap: 8px;
+    }
+    .hud-lateral {
+        padding: 8px 10px;
+        border-width: 2px;
+    }
+    .hud-caixa {
+        gap: 4px;
+    }
+    .hud-titulo {
+        font-size: 9px;
+    }
+    .hud-valor {
+        font-size: 14px;
+    }
+    .jogo-container {
+        padding: 8px;
+        border-width: 3px;
+    }
+    .jogo {
+        gap: 4px;
+    }
+    .row {
+        gap: 4px;
+    }
+    .row2 {
+        padding: 0;
+    }
+    .feedback-flutuante {
+        font-size: 9px;
+    }
+    .modal-card {
+        padding: 18px 12px;
+    }
+    .modal-card h1 {
+        font-size: 16px;
+    }
+    .modal-card p {
+        font-size: 11px;
+    }
+    .modal-estatisticas {
+        font-size: 10px;
+        padding: 10px;
+    }
+    .btn-acao {
+        padding: 11px 8px;
+        font-size: 10px;
+    }
+}
+
+/* FILTRO CRT */
+.crt::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 4px);
+    z-index: 9999;
+}
+.crt { filter: contrast(1.1) brightness(0.9); }
