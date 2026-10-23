@@ -115,9 +115,11 @@ function atualizarPlacarDOM() {
     if (elCombo) elCombo.textContent = 'x' + estadoPartida.combo;
 }
 
+// Delegação de eventos no #tabuleiro criado pelo Membro 1
 const containerTabuleiro = document.getElementById('tabuleiro');
 
-containerTabuleiro.addEventListener('mousedown', function (evento) {
+// Função comum para lidar tanto com o rato como com o toque
+function lidarComInteracao(evento) {
     if (!estadoPartida.jogoAtivo || estadoPartida.pausado) return;
 
     const buraco = evento.target.closest('.hole');
@@ -127,8 +129,16 @@ containerTabuleiro.addEventListener('mousedown', function (evento) {
     if (!img) return;
 
     processarCliqueBuraco(buraco, img);
-});
+}
 
+// Escuta o clique normal no PC
+containerTabuleiro.addEventListener('mousedown', lidarComInteracao);
+
+// Escuta o toque instantâneo no Telemóvel
+containerTabuleiro.addEventListener('touchstart', function(evento) {
+    evento.preventDefault(); // Evita que o telemóvel dê zoom ou dispare o mousedown logo a seguir
+    lidarComInteracao(evento);
+}, { passive: false });
 function processarCliqueBuraco(buraco, img) {
     const srcAtual = img.getAttribute('src') || '';
 
