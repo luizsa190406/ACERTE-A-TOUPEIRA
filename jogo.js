@@ -60,9 +60,18 @@ function ajustarTamanhoBuracos() {
     const tabuleiro = document.getElementById('tabuleiro');
     const linhas = LAYOUTS[configuracao.dificuldade];
     const maxColunas = Math.max(...linhas);
-    const porLargura = (window.innerWidth - 40) / maxColunas - 10;
-    const porAltura = tabuleiro.clientHeight / linhas.length - 20;
-    const tamanho = Math.max(60, Math.min(200, porLargura, porAltura));
+    const ehCelular = window.innerWidth <= 600;
+
+    // Desconta bordas, paddings e espaçamentos reais para nunca vazar na largura
+    const espacoExtraLargura = ehCelular ? 70 : 140;
+    const porLargura = (window.innerWidth - espacoExtraLargura) / maxColunas;
+
+    // Limita a altura máxima do tabuleiro para caber tudo na tela sem rolagem
+    const alturaMaxTabuleiro = ehCelular ? (window.innerHeight * 0.45) : (window.innerHeight * 0.60);
+    const porAltura = alturaMaxTabuleiro / linhas.length;
+
+    const tamanhoMinimo = ehCelular ? 44 : 60;
+    const tamanho = Math.max(tamanhoMinimo, Math.min(170, porLargura, porAltura));
     tabuleiro.style.setProperty('--tam-buraco', Math.floor(tamanho) + 'px');
 }
 
